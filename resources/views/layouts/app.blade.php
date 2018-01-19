@@ -23,15 +23,30 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     <style>
         body {
             padding-top:50px;
+            /*background: url('/assets/64531/green_suburb.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            color:#fff;
+            background-color:#333;*/
+            font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
         }
 
         #masthead {
             min-height:270px;
-            background-color:#85ff28;
-            color:white;
+            background: linear-gradient( #0099e6 , #ff0000);
+            color:#ff0000;
         }
 
         #masthead h1 {
@@ -42,7 +57,7 @@
         #masthead .well {
             margin-top:13%;
             background-color:#111155;
-            border-color:#000033;
+            border-color:#0099e6;
         }
 
         .icon-bar {
@@ -62,17 +77,17 @@
 
         @media screen and (min-width: 768px) {
             #masthead h1 {
-                font-size: 50px;
+                font-size: 100px;
             }
         }
 
         .navbar-bright {
-            background-color:#111155;
+            background-color:#0099e6;
             color:#fff;
         }
           
         .navbar-bright a, #masthead a, #masthead .lead {
-            color:#aaaacc;
+            color:#ffff00;
         }
 
         .navbar-bright li > a:hover {
@@ -103,99 +118,149 @@
         }
 
 
-        {
-            font-family: 'Lato';
-        }
-        
 
-        .fa-btn {
-            margin-right: 6px;
+        /* used for sidebar tab/collapse*/
+        @media (max-width: 991px) {
+          .visible-tabs {
+            display: none;
+          }
         }
-    </style>
+
+        @media (min-width: 992px) {
+          .visible-tabs {
+            display: block !important;
+          }
+        }
+
+        @media (min-width: 992px) {
+          .hidden-tabs {
+            display: none !important;
+          }
+        }
+
+        /* Footer */
+        .row-eq-height {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display:         flex;
+        }
+        .spacing {
+          margin-top : 10px;
+          margin-bottom : 50px;
+        }
+
+        .footer {
+            background-color:#6BB9F0;
+        }
+            </style>
 </head>
 <body>
  
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">Sinergi</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#sec">Profil</a>
-        </li>
-        <li>
-          <a href="#sec">Produk</a>
-        </li>
-        <li>
-          <a href="#sec">Blog</a>
-        </li>
-        <li>
-          <a href="#sec">Customer</a>
-        </li>
-      </ul>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">  <i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/user') }}"><i class="fa fa-btn fa-sign-out"></i>User Menu</a></li>
-                                <li><a href="{{ url('/role') }}"><i class="fa fa-btn fa-sign-out"></i>Role Menu</a></li>
-                                <li><a href="{{ url('/permission') }}"><i class="fa fa-btn fa-sign-out"></i>Permission Menu</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-    </nav>
-
-  </div>
-</header>
-
-<div id="masthead">  
-  <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-          <h1>Sinergi Multi Cipta
-            <p class="lead">ICT, Training & Consultant</p>
-          </h1>
         </div>
-        <div class="col-md-5">
-            <div class="well well-lg"> 
-              <div class="row">
-                <div class="col-sm-6">
-                    <img src="//placehold.it/180x100" class="img-responsive">
-                </div>
-                <div class="col-sm-6">
-                    <strong>Important</strong>
-                    <p>hari</p>
-                </div>
-              </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/profil">Profile</a>
+            </li>
+            <li>
+              <a href="/produk">Product</a>
+            </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/customer">Customer</a>
+            </li>
+          </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/user') }}"><i class="fa fa-btn fa-sign-out"></i>User Menu</a></li>
+                                    <li><a href="{{ url('/role') }}"><i class="fa fa-btn fa-sign-out"></i>Role Menu</a></li>
+                                    <li><a href="{{ url('/permission') }}"><i class="fa fa-btn fa-sign-out"></i>Permission Menu</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                </ul>
+                            </li>
+                        @endif
+                    </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <div id="masthead">  
+      <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h1>SINERGI
+                <p class="lead">ICT, Training & Consultant</p>
+              </h1>
             </div>
-        </div>
-      </div> 
-  </div><!-- /cont -->
-</div>
+            <div class="col-md-5">
+                <div class="well well-lg"> 
+                  <div class="row">
+                    <div class="col-sm-6">
+                        <img src={{url('/images/Sinergi.jpeg')}} class="img-responsive">
+                    </div>
+                    <div class="col-sm-6">
+                        <h2 align="center">More Than Your Expectation</h2>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div> 
+      </div><!-- /cont -->
+    </div>
+
+
 
     @yield('content')
+
+
+    @include('layouts.footer')
+
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+    {{-- javascript profil --}}
+    <script type="text/javascript">
+    $('#sidebar').affix({
+      offset: {
+        top: 245
+      }
+    });
+
+    var $body   = $(document.body);
+    var navHeight = $('.navbar').outerHeight(true) + 10;
+
+    $body.scrollspy({
+        target: '#leftCol',
+        offset: navHeight
+    });
+    </script>
 </body>
 </html>
